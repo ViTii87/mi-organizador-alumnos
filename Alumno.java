@@ -7,27 +7,49 @@
  */
 public class Alumno
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    // Atributos para guardar el nombre y apellidos del alumno
+    private String nombre;
+    private String apellidos;
+    
+    // Atributo para guardar el identificador de grupo de cada alumno.
+    private String idGrupo;
 
     /**
-     * Constructor for objects of class Alumno
+     * Contructor de alumnos
      */
-    public Alumno()
+    public Alumno(String nombreCompleto, String apellidos)
     {
-        // initialise instance variables
-        x = 0;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        idGrupo = null;
     }
 
+    
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * Metodo para obtener el nombre del alumno.
      */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public String getNombre(){
+        return nombre;
+    }
+    
+    /**
+     * Metodo para obtener los apellidos del alumno.
+     */
+    public String gerApellidos(){
+        return apellidos;
+    }
+    
+    /**
+     * Metodo para fijar el id del grupo del alumno.
+     */
+    public void setGrupo(String idgrupo){
+        this.idGrupo = idGrupo;
+    }
+    
+    /**
+     * Metodo para devolver la id del grupo del alumno
+     */
+    public String getIdGrupo(){
+        return idGrupo;
     }
 }
