@@ -82,4 +82,30 @@ public class Agrupa
             System.out.println(it.next().getNombreCompleto());
         }
     }
+
+    /**
+     * Metodo para mostrar solo los alumnos pertenecientes a un grupo
+     */
+    public void mostrarGrupo(String idGrupo){
+        int index = 0;
+        boolean noGrupo = false;
+        System.out.println("Listado de los alumnos del Grupo: " + idGrupo);
+        while(index < listaAlumnos.size())
+        {
+            if(listaAlumnos.get(index).getIdGrupo().equals(idGrupo))
+            {
+                 System.out.println(listaAlumnos.get(index).getNombreCompleto());
+                 index ++;
+                 noGrupo = true;
+            }
+            else
+            {
+                index ++;
+            }
+        }
+        if(!noGrupo)
+            {
+                 System.out.println("ERROR. No hay alumnos en ese grupo o no existe");
+            }
+    }
 }
