@@ -1,4 +1,3 @@
-
 /**
  * Write a description of class Alumno here.
  * 
@@ -9,7 +8,8 @@ public class Alumno
 {
     // Atributos para guardar el nombre y apellidos del alumno
     private String nombre;
-    private String apellidos;
+    private String apellido1;
+    private String apellido2;
     
     // Atributo para guardar el identificador de grupo de cada alumno.
     private String idGrupo;
@@ -17,33 +17,44 @@ public class Alumno
     /**
      * Contructor de alumnos
      */
-    public Alumno(String nombreCompleto, String apellidos)
+    public Alumno(String apellido1, String apellido2, String nombre)
     {
         this.nombre = nombre;
-        this.apellidos = apellidos;
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
         idGrupo = null;
     }
-
     
     /**
-     * Metodo para obtener el nombre del alumno.
+     * Metodo para devolver el nombre completo
      */
-    public String getNombre(){
-        return nombre;
-    }
-    
-    /**
-     * Metodo para obtener los apellidos del alumno.
-     */
-    public String gerApellidos(){
-        return apellidos;
+    public String getNombreCompleto()
+    {
+        return apellido1 + "  " + apellido2 + " , " + nombre + "              Grupo: " + getIdGrupo();
     }
     
     /**
      * Metodo para fijar el id del grupo del alumno.
      */
-    public void setGrupo(String idgrupo){
-        this.idGrupo = idGrupo;
+    public void setGrupo(int idGrupo){
+        if(idGrupo < 10)
+        {
+            this.idGrupo = "0"+"0"+"0"+idGrupo;
+        }
+        else
+        {
+            if(idGrupo < 100)
+            {
+                this.idGrupo = "0"+"0"+idGrupo;
+            }
+            else
+            {
+                if(idGrupo < 1000)
+                {
+                    this.idGrupo = "0"+idGrupo;
+                }
+            }
+        }
     }
     
     /**
