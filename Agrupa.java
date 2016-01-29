@@ -36,13 +36,14 @@ public class Agrupa
      */
     public void empareja()
     {
-        int pareja = 0;
-        int guardaAlea = 0;
-        boolean impar = true;
+        int pareja = 0; // Variable para controlar los pares
+        int guardaAlea = 0; // Variable para guardar los aleatorios
+        boolean impar = true; // Variable para controlar si el numero de alumnos es par o impar
         Collections.shuffle(listaAlumnos);
         it = listaAlumnos.iterator();
         Random aleatorio = new Random();
         guardaAlea = aleatorio.nextInt(1000);
+        
         if(listaAlumnos.size() % 2 == 0){
             impar = false;
         }
